@@ -23,4 +23,7 @@
 
 -(void)saveUserDetails:(NSDictionary *)dic;
 -(User *)getUserDetails;
+
+-(UITabBarController *)getMainTabController;
+-(UINavigationController *)getNavigationDrawerController;
 @end

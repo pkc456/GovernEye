@@ -108,18 +108,19 @@
 -(void)showWebScreenWithUrl:(NSString *)urlString{
     dispatch_async(dispatch_get_main_queue(), ^{
         //Center
-        CommonWebViewController *web = [[CommonWebViewController alloc]initWithNibName:@"CommonWebViewController" bundle:nil];
+        UITabBarController *tabController = (UITabBarController *) [[CommonClass sharedInstance]getMainTabController];
+        UINavigationController *webNavController = (UINavigationController *) [tabController.viewControllers firstObject];
+        CommonWebViewController *web = (CommonWebViewController *) webNavController.viewControllers.firstObject;
+        
         web.urlToLoad = urlString;
         web.isDrawerEnabled = true;
-        UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:web];
-        navController.navigationBar.translucent = false;
         
         //left
-        UINavigationController *navDrawer = [self getNavigationController];
+        UINavigationController *navDrawer = [[CommonClass sharedInstance] getNavigationDrawerController];
         
         //Main drawer
         MMDrawerController * drawerController = [[MMDrawerController alloc]
-                                                 initWithCenterViewController:navController
+                                                 initWithCenterViewController:tabController
                                                  leftDrawerViewController:navDrawer
                                                  rightDrawerViewController:nil];
         
@@ -140,9 +141,6 @@
     });
 }
 
--(UINavigationController *)getNavigationController{
-    UINavigationController *navDrawer = [[UIStoryboard storyboardWithName:@"NavigationDrawer" bundle:nil] instantiateViewControllerWithIdentifier:@"NavigationDrawerNavViewController"];
-    return navDrawer;
-}
+
 
 @end

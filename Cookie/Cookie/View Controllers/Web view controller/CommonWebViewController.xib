@@ -36,7 +36,7 @@
                 <constraint firstItem="Hb0-f5-5Pm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ehJ-6m-IdC"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-            <point key="canvasLocation" x="24.5" y="-267.5"/>
+            <point key="canvasLocation" x="137" y="-341"/>
         </view>
     </objects>
 </document>

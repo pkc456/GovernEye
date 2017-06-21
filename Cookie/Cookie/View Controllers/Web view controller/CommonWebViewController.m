@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     [self setupLeftMenuButton];
-    [self setTitleOf];
+    [self setUIElements];
     [self loadWebView];
 }
 
@@ -27,7 +27,7 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)setTitleOf{
+-(void)setUIElements{
     CGRect frame = CGRectMake(0, 0, 200, 40);
     
     UIView *viewHeader = [[UIView alloc]initWithFrame:frame];
@@ -36,6 +36,8 @@
     imageView.contentMode = UIViewContentModeScaleToFill;
     [viewHeader addSubview:imageView];
     self.navigationItem.titleView = viewHeader;
+    
+    [self setEdgesForExtendedLayout:UIRectEdgeNone];
 }
 
 -(void)setupLeftMenuButton{
@@ -50,10 +52,9 @@
 }
 
 -(void)loadWebView{
-    if([self.urlToLoad isEqualToString:@""]){
-        NSAssert(false, @"Please provide urlToLoad variable");
+    if([self.urlToLoad isEqualToString:@""] || self.urlToLoad == nil){
+        NSAssert(false, @"PLEASE PROVIDE urlToLoad VARIABLE");
     }else{
-
         NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:self.urlToLoad]];
         [webview loadRequest:request];
     }

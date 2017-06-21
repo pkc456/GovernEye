@@ -63,11 +63,11 @@
 }
 
 - (IBAction)btnSignUpAction:(UIButton *)sender {
-    [self pushToWebView:SIGN_UP_URL isNavigationDrawerEnabled:false];
+    [self pushToWebView:SIGN_UP_URL];
 }
 
 - (IBAction)btnForgotPasswordAction:(UIButton *)sender {
-    [self pushToWebView:FORGOT_URL isNavigationDrawerEnabled:false];
+    [self pushToWebView:FORGOT_URL];
 }
 
 #pragma mark - user defined
@@ -82,38 +82,38 @@
     return true;
 }
 
--(void)pushToWebView:(NSString *)url isNavigationDrawerEnabled:(BOOL)isDrawerEnable{
+-(void)showTabBarHomeView:(NSString *)url{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //Center
+        UITabBarController *tabController = (UITabBarController *) [[CommonClass sharedInstance]getMainTabController];
+        UINavigationController *webNavController = (UINavigationController *) [tabController.viewControllers firstObject];
+        CommonWebViewController *web = (CommonWebViewController *) webNavController.viewControllers.firstObject;
+        web.urlToLoad = url;
+        web.isDrawerEnabled = true;
+        
+        //left
+        UINavigationController *navDrawer = [[CommonClass sharedInstance] getNavigationDrawerController];
+        
+        //Main drawer
+        MMDrawerController * drawerController = [[MMDrawerController alloc]
+                                                 initWithCenterViewController:tabController
+                                                 leftDrawerViewController:navDrawer
+                                                 rightDrawerViewController:nil];
+        
+        [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+        [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+        
+        AppDelegate *delegate = (AppDelegate*) [[UIApplication sharedApplication]delegate];
+        delegate.window.rootViewController = drawerController;
+    });
+
+}
+
+-(void)pushToWebView:(NSString *)url{
     CommonWebViewController *webviewController = [[CommonWebViewController alloc]initWithNibName:@"CommonWebViewController" bundle:nil];
     webviewController.urlToLoad = url;
-    webviewController.isDrawerEnabled = isDrawerEnable;
-    
-    if(isDrawerEnable == true){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            //Center
-            UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:webviewController];
-            navController.navigationBar.translucent = false;
-            
-            //left
-            UINavigationController *navDrawer = [[UIStoryboard storyboardWithName:@"NavigationDrawer" bundle:nil] instantiateViewControllerWithIdentifier:@"NavigationDrawerNavViewController"];
-            
-            //Main drawer
-            MMDrawerController * drawerController = [[MMDrawerController alloc]
-                                                     initWithCenterViewController:navController
-                                                     leftDrawerViewController:navDrawer
-                                                     rightDrawerViewController:nil];
-            
-            [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-            [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-            
-            AppDelegate *delegate = (AppDelegate*) [[UIApplication sharedApplication]delegate];
-            delegate.window.rootViewController = drawerController;
-        });
-    }else{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.navigationController pushViewController:webviewController animated:YES];
-        });
-    }
+    webviewController.isDrawerEnabled = false;
+    [self.navigationController pushViewController:webviewController animated:YES];
 }
 
 
@@ -172,7 +172,7 @@
             
             User *user = [[CommonClass sharedInstance]getUserDetails];
             NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,user.Location,MOBILESITE];
-            [self pushToWebView:homeUrl isNavigationDrawerEnabled:true];
+            [self showTabBarHomeView:homeUrl];
         }
         
         

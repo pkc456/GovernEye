@@ -70,4 +70,15 @@
     });
 }
 
+
+#pragma mark - Main tab
+-(UITabBarController *)getMainTabController{
+    return [[UIStoryboard storyboardWithName:@"Home" bundle:nil] instantiateViewControllerWithIdentifier:@"MainTabController"];
+}
+
+-(UINavigationController *)getNavigationDrawerController{
+    UINavigationController *navDrawer = [[UIStoryboard storyboardWithName:@"NavigationDrawer" bundle:nil] instantiateViewControllerWithIdentifier:@"NavigationDrawerNavViewController"];
+    return navDrawer;
+}
+
 @end
