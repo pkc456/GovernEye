@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HexColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,7 +24,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PPTopMostController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Cookie.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RMessage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,6 +42,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>47AB97F182F5B717E4F7221DF31995E1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
 		<dict>
 			<key>primary</key>
@@ -37,12 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A7AFC92E286C9967315AFC58ED4FD117</key>
+		<key>7909D48DD22E709ECD41A4F3661F8222</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C95C45974D77E3E41FE9D2A80E093179</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D90A41E8E0A113E1DDE1001B6E1AF145</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC7BAA2B0109B633CE06A36E872A9505</key>
 		<dict>
 			<key>primary</key>
 			<true/>

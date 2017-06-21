@@ -79,6 +79,30 @@ EOM
       ;;
   esac
 }
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "RMessage/RMessage/Resources/RMessageView.xib"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundErrorIcon.png"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundErrorIcon@2x.png"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundSuccessIcon.png"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundSuccessIcon@2x.png"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundWarningIcon.png"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundWarningIcon@2x.png"
+  install_resource "RMessage/RMessage/Assets/NotificationButtonBackground.png"
+  install_resource "RMessage/RMessage/Assets/NotificationButtonBackground@2x.png"
+  install_resource "RMessage/RMessage/Assets/RMessageDefaultDesign.json"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "RMessage/RMessage/Resources/RMessageView.xib"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundErrorIcon.png"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundErrorIcon@2x.png"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundSuccessIcon.png"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundSuccessIcon@2x.png"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundWarningIcon.png"
+  install_resource "RMessage/RMessage/Assets/NotificationBackgroundWarningIcon@2x.png"
+  install_resource "RMessage/RMessage/Assets/NotificationButtonBackground.png"
+  install_resource "RMessage/RMessage/Assets/NotificationButtonBackground@2x.png"
+  install_resource "RMessage/RMessage/Assets/RMessageDefaultDesign.json"
+fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

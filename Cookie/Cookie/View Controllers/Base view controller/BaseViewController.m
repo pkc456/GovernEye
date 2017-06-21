@@ -33,4 +33,11 @@
 }
 
 
+-(void)showAlert:(NSString *)message type:(RMessageType )messageType{
+    [RMessage showNotificationWithTitle:@""
+                               subtitle:message
+                                   type:messageType
+                         customTypeName:nil
+                               callback:nil];
+}
 @end

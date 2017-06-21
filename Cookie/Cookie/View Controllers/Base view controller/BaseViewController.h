@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "RMessageView.h"
 
 @interface BaseViewController : UIViewController
 
 @property (nonatomic, strong) User *userObject;
+
+-(void)showAlert:(NSString *)message type:(RMessageType )messageType;
 
 @end

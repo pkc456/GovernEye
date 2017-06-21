@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A7AFC92E286C9967315AFC58ED4FD117'
+               BlueprintIdentifier = 'D90A41E8E0A113E1DDE1001B6E1AF145'
                BlueprintName = 'Pods-Cookie'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-Cookie.a'>

@@ -6,8 +6,8 @@ target 'Cookie' do
   # use_frameworks!
 
   # Pods for Cookie
-  pod 'AFNetworking', '~> 2.5.1'
-pod 'MBProgressHUD', '~> 1.0.0'
-pod 'MMDrawerController', '~> 0.5.7'
-
+    pod 'AFNetworking', '~> 2.5.1'
+    pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'MMDrawerController', '~> 0.5.7'
+    pod 'RMessage'
 end

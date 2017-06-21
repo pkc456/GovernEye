@@ -71,10 +71,10 @@
 #pragma mark - user defined
 -(BOOL)isValid{
     if([textfieldEmail.text isEqualToString:@""]){
-        [self showAlert:@"Enter username"];
+        [self showAlert:@"Enter username" type:RMessageTypeError];
         return false;
     }else if([textfieldPassword.text isEqualToString:@""]){
-        [self showAlert:@"Enter password"];
+        [self showAlert:@"Enter password" type:RMessageTypeError];
         return false;
     }
     return true;
@@ -119,7 +119,7 @@
                     passwordString:textfieldPassword.text
                  completionHandler:^(NSInteger statusCode, NSDictionary *headerFields) {
                      if(statusCode == 200){
-                         [self showAlert:@"Enter valid credentials"];
+                         [self showAlert:@"Enter valid credentials" type:RMessageTypeError];
                      }else if (statusCode == 302){
                          [self saveCookieDataToUserModel:headerFields];
                          [self showHomeTabBarView];
@@ -152,15 +152,5 @@
     NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,self.userObject.Location,MOBILESITE];
     [self showTabBarHomeView:homeUrl];
 }
-
--(void)showAlert:(NSString *)message{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:K_APP_NAME message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    [alert addAction:cancel];
-    [self presentViewController:alert animated:true completion:nil];
-}
-
 
 @end
