@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C0C7A3D2841157069EDDEA897B9D562A33F2B4D1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "13E9124A2B91018F13121D985B1D79D884B64B31" : 9223372036854775807,
+    "C0C7A3D2841157069EDDEA897B9D562A33F2B4D1" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1E991BCD-675F-452D-97CA-012DF2170A81",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "13E9124A2B91018F13121D985B1D79D884B64B31" : "",
+    "C0C7A3D2841157069EDDEA897B9D562A33F2B4D1" : "GovernEye\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Cookie",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Cookie\/Cookie.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:healthkart\/healthkartios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "13E9124A2B91018F13121D985B1D79D884B64B31"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:pkc456\/GovernEye.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C0C7A3D2841157069EDDEA897B9D562A33F2B4D1"
+    }
+  ]
+}
