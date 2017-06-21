@@ -11,7 +11,6 @@
 #import "CommonWebViewController.h"
 #import "AppDelegate.h"
 #import "NavigationDrawerViewController.h"
-#import "User.h"
 
 @interface ViewController ()
 
@@ -45,9 +44,8 @@
 }
 
 -(void)getUserDetails{
-    User *user = [[CommonClass sharedInstance]getUserDetails];
-    if(user != nil){
-        textfieldEmail.text = user.username;
+    if(self.userObject != nil){
+        textfieldEmail.text = self.userObject.username;
     }
 }
 
@@ -146,12 +144,12 @@
         [data setObject:textfieldPassword.text forKey:Key_User_Model_Password];
     }
     
-    [[CommonClass sharedInstance]saveUserDetails:data];        
+    [[CommonClass sharedInstance]saveUserDetails:data];
+    self.userObject = [[CommonClass sharedInstance]getUserDetails];
 }
 
 -(void)showHomeTabBarView{
-    User *user = [[CommonClass sharedInstance]getUserDetails];
-    NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,user.Location,MOBILESITE];
+    NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,self.userObject.Location,MOBILESITE];
     [self showTabBarHomeView:homeUrl];
 }
 

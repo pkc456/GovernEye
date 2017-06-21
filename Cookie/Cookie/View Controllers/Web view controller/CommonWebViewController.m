@@ -8,7 +8,6 @@
 
 #import "CommonWebViewController.h"
 #import "MMDrawerBarButtonItem.h"
-#import "User.h"
 
 @interface CommonWebViewController () <UIWebViewDelegate>
 
@@ -25,12 +24,12 @@
     [self loadWebView];
 }
 
-/*
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: animated];
     //po self.tabBarController.tabBar.selectedItem.title        //To get selected tab index when it is clicked. This can be used in loading a different url when tab bar item is cliked
 }
-*/
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -46,16 +45,14 @@
         if([self.urlToLoad isEqualToString:@""] || self.urlToLoad == nil){
             switch (self.tabBarController.selectedIndex) {
                 case 0:
-                {
-                    User *user = [[CommonClass sharedInstance]getUserDetails];
-                    NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,user.Location,MOBILESITE];
+                {                    
+                    NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,self.userObject.Location,MOBILESITE];
                     self.urlToLoad = homeUrl;
                     break;
                 }
                 case 1:
                 {
-                    User *user = [[CommonClass sharedInstance]getUserDetails];
-                    NSString *profileUrl = [NSString stringWithFormat:@"%@%@%@",USER_PROFILE_URL,user.usernameForProfileUrl,MOBILESITE];
+                    NSString *profileUrl = [NSString stringWithFormat:@"%@%@%@",USER_PROFILE_URL,self.userObject.usernameForProfileUrl,MOBILESITE];
                     self.urlToLoad = profileUrl;
                     break;
                 }

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cookie/ViewController.m"
-            timestampString = "519729422.789631"
+            filePath = "Cookie/Utility/Web service handler/Login Handler/Loginhandler.m"
+            timestampString = "519734781.623754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "-callLoginWebService"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-callLoginService:emailString:passwordString:completionHandler:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cookie/ViewController.m"
-            timestampString = "519729422.789631"
+            filePath = "Cookie/Utility/Web service handler/Login Handler/Loginhandler.m"
+            timestampString = "519734769.663933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "-callLoginWebService"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-callLoginService:emailString:passwordString:completionHandler:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cookie/ViewController.m"
-            timestampString = "519729422.789631"
+            filePath = "Cookie/Utility/Web service handler/Login Handler/Loginhandler.m"
+            timestampString = "519734770.768013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-callLoginWebService"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-callLoginService:emailString:passwordString:completionHandler:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

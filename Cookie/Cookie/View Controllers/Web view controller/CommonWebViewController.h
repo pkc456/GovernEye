@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface CommonWebViewController : UIViewController
+@interface CommonWebViewController : BaseViewController
 {
     
     __weak IBOutlet UIWebView *webview;
@@ -25,7 +26,7 @@
 
 
 //      The class is used in xib and Home.storyboard
-
+    
 //      Use this view controller when user is signed out. Drawer is disable in xib
 
 

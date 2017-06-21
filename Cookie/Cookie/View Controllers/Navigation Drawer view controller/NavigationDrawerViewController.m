@@ -9,7 +9,6 @@
 #import "NavigationDrawerViewController.h"
 #import "AppDelegate.h"
 #import "CommonWebViewController.h"
-#import "User.h"
 
 @interface NavigationDrawerViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -28,7 +27,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 4;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -43,15 +42,12 @@
             text = @"Home";
             break;
         case 1:
-            text = @"My Feed";
-            break;
-        case 2:
             text = @"User Profile";
             break;
-        case 3:
+        case 2:
             text = @"User Settings";
             break;
-        case 4:
+        case 3:
             text = @"Logout";
             break;
         default:
@@ -67,28 +63,22 @@
     switch (indexPath.row) {
         case 0: //Home
         {
-            User *user = [[CommonClass sharedInstance]getUserDetails];
-            NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,user.Location,MOBILESITE];
+            NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,self.userObject.Location,MOBILESITE];
             [self showWebScreenWithUrl:homeUrl selectedTabToShow:indexPath.row];
             break;
         }
-        case 1: //My feed
+        case 1: //User Profile
         {
-            break;
-        }
-        case 2: //User Profile
-        {
-            User *user = [[CommonClass sharedInstance]getUserDetails];
-            NSString *url = [NSString stringWithFormat:@"%@%@%@",USER_PROFILE_URL,user.usernameForProfileUrl,MOBILESITE];
+            NSString *url = [NSString stringWithFormat:@"%@%@%@",USER_PROFILE_URL,self.userObject.usernameForProfileUrl,MOBILESITE];
             [self showWebScreenWithUrl:url selectedTabToShow:1];
             break;
         }
-        case 3: //User settings
+        case 2: //User settings
         {
             [self showWebScreenWithUrl:USER_SETTING_URL selectedTabToShow:0];
             break;
         }
-        case 4:
+        case 3:
         {
             [self showLoginScreen];
             break;
@@ -138,7 +128,5 @@
         AppDelegate *delegate = (AppDelegate*) [[UIApplication sharedApplication]delegate];
         delegate.window.rootViewController = navController;
 }
-
-
 
 @end

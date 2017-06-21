@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface NavigationDrawerViewController : UIViewController
+@interface NavigationDrawerViewController : BaseViewController
 {
     
     __weak IBOutlet UITableView *tableviewSideMenu;
