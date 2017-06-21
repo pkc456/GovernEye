@@ -21,12 +21,14 @@
     [self setUpUrlVariable];
     [self setupLeftMenuButton];
     [self setUIElements];
-    [self loadWebView];
 }
 
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear: animated];
+    [self loadWebView];
+
+//    self.tabBarController.tabBar.selectedItem.tag
     //po self.tabBarController.tabBar.selectedItem.title        //To get selected tab index when it is clicked. This can be used in loading a different url when tab bar item is cliked
 }
 

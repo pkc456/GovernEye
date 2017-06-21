@@ -190,7 +190,7 @@
         <scene sceneID="GUa-6T-ebm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oGZ-XC-9S7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="zmb-V7-VU7"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Profile" image="Profile" id="zmb-V7-VU7"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="fNN-T7-ZnI">
@@ -210,7 +210,7 @@
         <scene sceneID="nMw-Js-DM9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hVO-kR-kqe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bookmark" image="Bookmark" id="aQM-el-eiv"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Bookmark" image="Bookmark" id="aQM-el-eiv"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3QP-MB-mfj">

@@ -65,8 +65,6 @@
 -(void)autoLogin{
     semaphore = dispatch_semaphore_create(0);
     
-   
-    
     User *user = [[CommonClass sharedInstance]getUserDetails];
     if(user != nil && user.username != nil){
         [self callLoginWebService:user.username passwordString:user.password];
@@ -74,11 +72,10 @@
         dispatch_semaphore_signal(semaphore);
     }
     
-    
     while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW)) { //2
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:100]];
     }
-    
+
 }
 
 -(void)callLoginWebService:(NSString *)username passwordString:(NSString *)password{
