@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5iW-FH-cJu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Governeye-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq6-5O-7Iv">
+                                <rect key="frame" x="0.0" y="515" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFS-eS-u6J">
+                                <rect key="frame" x="15" y="25" width="345" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R7b-nT-m50">
+                                <rect key="frame" x="15" y="80" width="345" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-Em-I44">
+                                <rect key="frame" x="285" y="135" width="75" height="29"/>
+                                <color key="backgroundColor" red="0.2470588235" green="0.64313725489999995" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="732-pf-M0Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnSignInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfn-1P-W1d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Y-7K-w94">
+                                <rect key="frame" x="15" y="135" width="113" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Create an Account"/>
+                                <connections>
+                                    <action selector="btnSignUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FGE-Hn-4ED"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LJ-6b-mTW">
+                                <rect key="frame" x="15" y="193" width="101" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnForgotPasswordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SDS-AL-lF9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekk-P8-ztI">
+                                <rect key="frame" x="255" y="193" width="105" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Remember Me" image="Checkbox">
+                                    <color key="titleColor" red="0.2470588235" green="0.64313725489999995" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" image="Checkbox_Selected"/>
+                                <connections>
+                                    <action selector="btnRememberAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5jE-WE-4T9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VFS-eS-u6J" secondAttribute="trailing" constant="15" id="0Qa-ZV-4pW"/>
+                            <constraint firstItem="QoT-Em-I44" firstAttribute="trailing" secondItem="R7b-nT-m50" secondAttribute="trailing" id="3sL-Mx-zrJ"/>
+                            <constraint firstItem="QoT-Em-I44" firstAttribute="top" secondItem="R7b-nT-m50" secondAttribute="bottom" constant="25" id="6YI-gK-jJ7"/>
+                            <constraint firstItem="Ekk-P8-ztI" firstAttribute="top" secondItem="4LJ-6b-mTW" secondAttribute="top" id="IDT-yr-Dp3"/>
+                            <constraint firstItem="VFS-eS-u6J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="25" id="Izb-5v-zJV"/>
+                            <constraint firstItem="VFS-eS-u6J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="OaW-IY-EoT"/>
+                            <constraint firstItem="4LJ-6b-mTW" firstAttribute="leading" secondItem="l2Y-7K-w94" secondAttribute="leading" id="P0E-68-E3f"/>
+                            <constraint firstItem="R7b-nT-m50" firstAttribute="leading" secondItem="VFS-eS-u6J" secondAttribute="leading" id="Zoc-DI-6S1"/>
+                            <constraint firstItem="l2Y-7K-w94" firstAttribute="top" secondItem="QoT-Em-I44" secondAttribute="top" id="ffM-cq-SoT"/>
+                            <constraint firstItem="4LJ-6b-mTW" firstAttribute="top" secondItem="l2Y-7K-w94" secondAttribute="bottom" constant="30" id="ffZ-My-zD0"/>
+                            <constraint firstItem="l2Y-7K-w94" firstAttribute="leading" secondItem="R7b-nT-m50" secondAttribute="leading" id="fzm-Ng-LK6"/>
+                            <constraint firstItem="R7b-nT-m50" firstAttribute="trailing" secondItem="VFS-eS-u6J" secondAttribute="trailing" id="jCO-nL-ncZ"/>
+                            <constraint firstItem="R7b-nT-m50" firstAttribute="top" secondItem="VFS-eS-u6J" secondAttribute="bottom" constant="25" id="ph3-8C-gav"/>
+                            <constraint firstItem="Ekk-P8-ztI" firstAttribute="trailing" secondItem="QoT-Em-I44" secondAttribute="trailing" id="zDG-fO-nDL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Governeye" id="8TE-3g-7lL"/>
+                    <connections>
+                        <outlet property="buttonRememberMe" destination="Ekk-P8-ztI" id="DUi-7k-Ruh"/>
+                        <outlet property="textfieldEmail" destination="VFS-eS-u6J" id="oKO-wi-GUt"/>
+                        <outlet property="textfieldPassword" destination="R7b-nT-m50" id="0xk-jz-Ofi"/>
+                        <outlet property="webview" destination="Mq6-5O-7Iv" id="nVc-OY-7yt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055.2" y="122.78860569715144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="puq-d7-RFM">
+            <objects>
+                <navigationController storyboardIdentifier="ViewControllerNavController" automaticallyAdjustsScrollViewInsets="NO" id="5iW-FH-cJu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="krT-Aj-UWO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ra7-sR-99j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sYr-bD-T2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Checkbox" width="23" height="18"/>
+        <image name="Checkbox_Selected" width="23" height="18"/>
+    </resources>
+</document>
