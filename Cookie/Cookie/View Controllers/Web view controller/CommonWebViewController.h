@@ -15,8 +15,8 @@
 }
 
 @property (nonatomic, strong)NSString *urlToLoad;
-@property BOOL isDrawerEnabled;
 
+@property IBInspectable BOOL isDrawerEnabled;
 
 @end
 
@@ -24,8 +24,9 @@
 ////////////**************************************////////////
 
 
-//      This class is used in xib and Home.storyboard
+//      The class is used in xib and Home.storyboard
 
+//      Use this view controller when user is signed out. Drawer is disable in xib
 
 
 ////////////**************************************////////////

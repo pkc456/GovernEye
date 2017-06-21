@@ -130,7 +130,6 @@
         UINavigationController *webNavController = (UINavigationController *) [tabController.viewControllers firstObject];
         CommonWebViewController *web = (CommonWebViewController *) webNavController.viewControllers.firstObject;
         web.urlToLoad = url;
-        web.isDrawerEnabled = true;
         
         //left
         UINavigationController *navDrawer = [[CommonClass sharedInstance] getNavigationDrawerController];

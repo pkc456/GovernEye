@@ -82,11 +82,11 @@
 }
 
 #pragma mark - Common web controller using xib
--(CommonWebViewController *)getCommonWebviewController:(NSString *)url isDrawerEnable:(BOOL)isDrawer
+-(CommonWebViewController *)getCommonWebviewControllerFromXib:(NSString *)url
 {
+    //isDrawerEnabled is disabled by default in xib
     CommonWebViewController *webviewController = [[CommonWebViewController alloc]initWithNibName:@"CommonWebViewController" bundle:nil];
     webviewController.urlToLoad = url;
-    webviewController.isDrawerEnabled = isDrawer;
     return webviewController;
 }
 

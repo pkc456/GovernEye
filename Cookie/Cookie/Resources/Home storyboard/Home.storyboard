@@ -44,6 +44,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isDrawerEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="webview" destination="Eeu-Tr-mUe" id="bYc-oi-lL7"/>
                     </connections>
@@ -87,6 +90,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isDrawerEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="webview" destination="QNR-AS-tjf" id="Dzf-Ek-t0X"/>
                     </connections>
@@ -130,6 +136,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isDrawerEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="webview" destination="UMs-AG-0nA" id="La8-e8-qtt"/>
                     </connections>
@@ -157,11 +166,11 @@
             </objects>
             <point key="canvasLocation" x="607" y="-366"/>
         </scene>
-        <!--NewsFeed-->
+        <!--Newsfeed-->
         <scene sceneID="v5h-JV-363">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ORy-yY-P1x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="NewsFeed" id="vfb-lz-g9P"/>
+                    <tabBarItem key="tabBarItem" title="Newsfeed" image="Newsfeed" id="vfb-lz-g9P"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Eel-nh-7vD">
@@ -181,7 +190,7 @@
         <scene sceneID="GUa-6T-ebm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oGZ-XC-9S7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="zmb-V7-VU7"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="zmb-V7-VU7"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="fNN-T7-ZnI">
@@ -201,7 +210,7 @@
         <scene sceneID="nMw-Js-DM9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hVO-kR-kqe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bookmark" id="aQM-el-eiv"/>
+                    <tabBarItem key="tabBarItem" title="Bookmark" image="Bookmark" id="aQM-el-eiv"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3QP-MB-mfj">
@@ -219,6 +228,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bookmark" width="12" height="12"/>
+        <image name="Newsfeed" width="12" height="12"/>
         <image name="Notification" width="12" height="12"/>
+        <image name="Profile" width="12" height="12"/>
     </resources>
 </document>

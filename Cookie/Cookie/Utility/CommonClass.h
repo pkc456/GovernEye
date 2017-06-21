@@ -29,6 +29,6 @@
 -(UITabBarController *)getMainTabController;
 -(UINavigationController *)getNavigationDrawerController;
 
--(CommonWebViewController *)getCommonWebviewController:(NSString *)url isDrawerEnable:(BOOL)isDrawer;
+-(CommonWebViewController *)getCommonWebviewControllerFromXib:(NSString *)url;
 
 @end

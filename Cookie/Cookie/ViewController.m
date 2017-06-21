@@ -89,7 +89,6 @@
         UINavigationController *webNavController = (UINavigationController *) [tabController.viewControllers firstObject];
         CommonWebViewController *web = (CommonWebViewController *) webNavController.viewControllers.firstObject;
         web.urlToLoad = url;
-        web.isDrawerEnabled = true;
         
         //left
         UINavigationController *navDrawer = [[CommonClass sharedInstance] getNavigationDrawerController];
@@ -110,7 +109,7 @@
 }
 
 -(void)pushToWebView:(NSString *)url{
-    CommonWebViewController *webviewController = [[CommonClass sharedInstance]getCommonWebviewController:url isDrawerEnable:false];
+    CommonWebViewController *webviewController = [[CommonClass sharedInstance]getCommonWebviewControllerFromXib:url];
     [self.navigationController pushViewController:webviewController animated:YES];
 }
 
@@ -151,11 +150,9 @@
 }
 
 -(void)showHomeTabBarView{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        User *user = [[CommonClass sharedInstance]getUserDetails];
-        NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,user.Location,MOBILESITE];
-        [self showTabBarHomeView:homeUrl];
-    });
+    User *user = [[CommonClass sharedInstance]getUserDetails];
+    NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,user.Location,MOBILESITE];
+    [self showTabBarHomeView:homeUrl];
 }
 
 -(void)showAlert:(NSString *)message{

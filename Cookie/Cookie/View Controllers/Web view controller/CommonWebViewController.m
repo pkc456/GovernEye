@@ -8,6 +8,7 @@
 
 #import "CommonWebViewController.h"
 #import "MMDrawerBarButtonItem.h"
+#import "User.h"
 
 @interface CommonWebViewController () <UIWebViewDelegate>
 
@@ -18,16 +19,58 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setUpUrlVariable];
     [self setupLeftMenuButton];
     [self setUIElements];
     [self loadWebView];
 }
+
+/*
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear: animated];
+    //po self.tabBarController.tabBar.selectedItem.title        //To get selected tab index when it is clicked. This can be used in loading a different url when tab bar item is cliked
+}
+*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 #pragma mark - User defined methods
+
+-(void)setUpUrlVariable{
+    //Set the default url in case of tab bar
+
+    if(self.tabBarController != nil){
+        
+        if([self.urlToLoad isEqualToString:@""] || self.urlToLoad == nil){
+            switch (self.tabBarController.selectedIndex) {
+                case 0:
+                {
+                    User *user = [[CommonClass sharedInstance]getUserDetails];
+                    NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,user.Location,MOBILESITE];
+                    self.urlToLoad = homeUrl;
+                    break;
+                }
+                case 1:
+                {
+                    User *user = [[CommonClass sharedInstance]getUserDetails];
+                    NSString *profileUrl = [NSString stringWithFormat:@"%@%@%@",USER_PROFILE_URL,user.usernameForProfileUrl,MOBILESITE];
+                    self.urlToLoad = profileUrl;
+                    break;
+                }
+                case 2:
+                {
+                    self.urlToLoad = BOOKMARK_URL;
+                    break;
+                }
+                    
+                default:
+                    break;
+            }
+        }
+    }
+}
 
 -(void)setUIElements{
     CGRect frame = CGRectMake(0, 0, 200, 40);
@@ -64,7 +107,7 @@
 
 #pragma mark - IBACtions
 - (IBAction)btnNotificationAction:(UIBarButtonItem *)sender {
-    CommonWebViewController *webviewController = [[CommonClass sharedInstance]getCommonWebviewController:NOTIFICATION_URL isDrawerEnable:false];
+    CommonWebViewController *webviewController = [[CommonClass sharedInstance]getCommonWebviewControllerFromXib:NOTIFICATION_URL];
     [self.navigationController pushViewController:webviewController animated:YES];
 }
 

@@ -69,10 +69,10 @@
         {
             User *user = [[CommonClass sharedInstance]getUserDetails];
             NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,user.Location,MOBILESITE];
-            [self showWebScreenWithUrl:homeUrl];
+            [self showWebScreenWithUrl:homeUrl selectedTabToShow:indexPath.row];
             break;
         }
-        case 1:
+        case 1: //My feed
         {
             break;
         }
@@ -80,12 +80,12 @@
         {
             User *user = [[CommonClass sharedInstance]getUserDetails];
             NSString *url = [NSString stringWithFormat:@"%@%@%@",USER_PROFILE_URL,user.usernameForProfileUrl,MOBILESITE];
-            [self showWebScreenWithUrl:url];
+            [self showWebScreenWithUrl:url selectedTabToShow:1];
             break;
         }
         case 3: //User settings
         {
-            [self showWebScreenWithUrl:USER_SETTING_URL];
+            [self showWebScreenWithUrl:USER_SETTING_URL selectedTabToShow:0];
             break;
         }
         case 4:
@@ -105,15 +105,15 @@
     [self.mm_drawerController closeDrawerAnimated:true completion:nil];
 }
 
--(void)showWebScreenWithUrl:(NSString *)urlString{
+-(void)showWebScreenWithUrl:(NSString *)urlString selectedTabToShow:(NSUInteger)selectedTabIndex{
     dispatch_async(dispatch_get_main_queue(), ^{
         //Center
         UITabBarController *tabController = (UITabBarController *) [[CommonClass sharedInstance]getMainTabController];
-        UINavigationController *webNavController = (UINavigationController *) [tabController.viewControllers firstObject];
-        CommonWebViewController *web = (CommonWebViewController *) webNavController.viewControllers.firstObject;
         
+        tabController.selectedIndex = selectedTabIndex;
+        UINavigationController *webNavController = (UINavigationController *) [tabController.viewControllers objectAtIndex:selectedTabIndex];
+        CommonWebViewController *web = (CommonWebViewController *) webNavController.viewControllers.firstObject;        
         web.urlToLoad = urlString;
-        web.isDrawerEnabled = true;
         
         //left
         UINavigationController *navDrawer = [[CommonClass sharedInstance] getNavigationDrawerController];
@@ -133,12 +133,10 @@
 }
 
 -(void)showLoginScreen{
-    dispatch_async(dispatch_get_main_queue(), ^{        
         UINavigationController *navController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewControllerNavController"];
         
         AppDelegate *delegate = (AppDelegate*) [[UIApplication sharedApplication]delegate];
         delegate.window.rootViewController = navController;
-    });
 }
 
 
