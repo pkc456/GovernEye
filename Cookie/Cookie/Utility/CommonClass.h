@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @class User;
+@class CommonWebViewController;
+
 
 @interface CommonClass : NSObject
 
@@ -26,4 +28,7 @@
 
 -(UITabBarController *)getMainTabController;
 -(UINavigationController *)getNavigationDrawerController;
+
+-(CommonWebViewController *)getCommonWebviewController:(NSString *)url isDrawerEnable:(BOOL)isDrawer;
+
 @end

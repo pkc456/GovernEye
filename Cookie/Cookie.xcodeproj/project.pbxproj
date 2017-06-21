@@ -16,6 +16,7 @@
 		99460B651EF7DDB500AB7FB0 /* CommonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 99460B641EF7DDB500AB7FB0 /* CommonClass.m */; };
 		99460B681EF7E32800AB7FB0 /* NavigationDrawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99460B671EF7E32800AB7FB0 /* NavigationDrawer.storyboard */; };
 		99460B6C1EF7E36000AB7FB0 /* NavigationDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99460B6B1EF7E36000AB7FB0 /* NavigationDrawerViewController.m */; };
+		99D31E441EFA548200572B83 /* Loginhandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D31E431EFA548200572B83 /* Loginhandler.m */; };
 		99D4F8A51EF410BF008693AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D4F8A41EF410BF008693AA /* main.m */; };
 		99D4F8A81EF410BF008693AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D4F8A71EF410BF008693AA /* AppDelegate.m */; };
 		99D4F8AB1EF410BF008693AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D4F8AA1EF410BF008693AA /* ViewController.m */; };
@@ -43,6 +44,8 @@
 		99460B671EF7E32800AB7FB0 /* NavigationDrawer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationDrawer.storyboard; sourceTree = "<group>"; };
 		99460B6A1EF7E36000AB7FB0 /* NavigationDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationDrawerViewController.h; sourceTree = "<group>"; };
 		99460B6B1EF7E36000AB7FB0 /* NavigationDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationDrawerViewController.m; sourceTree = "<group>"; };
+		99D31E421EFA548200572B83 /* Loginhandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loginhandler.h; sourceTree = "<group>"; };
+		99D31E431EFA548200572B83 /* Loginhandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loginhandler.m; sourceTree = "<group>"; };
 		99D4F8A01EF410BF008693AA /* Governeye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Governeye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99D4F8A41EF410BF008693AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		99D4F8A61EF410BF008693AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 		99460B571EF7BFE100AB7FB0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				99D31E401EFA545300572B83 /* Web service handler */,
 				99460B581EF7BFE100AB7FB0 /* Constant */,
 				99460B631EF7DDB500AB7FB0 /* CommonClass.h */,
 				99460B641EF7DDB500AB7FB0 /* CommonClass.m */,
@@ -172,6 +176,23 @@
 				99460B6B1EF7E36000AB7FB0 /* NavigationDrawerViewController.m */,
 			);
 			path = "Navigation Drawer view controller";
+			sourceTree = "<group>";
+		};
+		99D31E401EFA545300572B83 /* Web service handler */ = {
+			isa = PBXGroup;
+			children = (
+				99D31E411EFA546800572B83 /* Login Handler */,
+			);
+			path = "Web service handler";
+			sourceTree = "<group>";
+		};
+		99D31E411EFA546800572B83 /* Login Handler */ = {
+			isa = PBXGroup;
+			children = (
+				99D31E421EFA548200572B83 /* Loginhandler.h */,
+				99D31E431EFA548200572B83 /* Loginhandler.m */,
+			);
+			path = "Login Handler";
 			sourceTree = "<group>";
 		};
 		99D4F8971EF410BE008693AA = {
@@ -356,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9935EC371EF9307D005E7F0D /* User.m in Sources */,
+				99D31E441EFA548200572B83 /* Loginhandler.m in Sources */,
 				99D4F8AB1EF410BF008693AA /* ViewController.m in Sources */,
 				99460B651EF7DDB500AB7FB0 /* CommonClass.m in Sources */,
 				99460B6C1EF7E36000AB7FB0 /* NavigationDrawerViewController.m in Sources */,

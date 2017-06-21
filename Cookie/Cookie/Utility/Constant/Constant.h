@@ -18,7 +18,7 @@
 //#define HOME_URL BASE_URL "/members/home" MOBILESITE  //This url is dynamic now
 #define FORGOT_URL BASE_URL "/user/auth/forgot" MOBILESITE
 #define SIGN_UP_URL BASE_URL "/signup" MOBILESITE
-
+#define NOTIFICATION_URL BASE_URL "/activity/notifications" MOBILESITE
 
 //Links related to navigaiton drawer
 #define LOGOUT_URL BASE_URL "/logout"

@@ -37,7 +37,13 @@
                             <constraint firstItem="Eeu-Tr-mUe" firstAttribute="leading" secondItem="wQJ-sU-pkW" secondAttribute="leading" id="aDk-v4-nQa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0LW-gF-jNG"/>
+                    <navigationItem key="navigationItem" id="0LW-gF-jNG">
+                        <barButtonItem key="rightBarButtonItem" image="Notification" id="o6r-AM-7cg">
+                            <connections>
+                                <action selector="btnNotificationAction:" destination="vvf-8L-Iph" id="zVo-uo-mXw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webview" destination="Eeu-Tr-mUe" id="bYc-oi-lL7"/>
                     </connections>
@@ -74,7 +80,13 @@
                             <constraint firstItem="QNR-AS-tjf" firstAttribute="leading" secondItem="6ZM-dn-VVV" secondAttribute="leading" id="vjo-pT-w4L"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Wz1-LZ-FbO"/>
+                    <navigationItem key="navigationItem" id="Wz1-LZ-FbO">
+                        <barButtonItem key="rightBarButtonItem" image="Notification" id="lDR-So-rw1">
+                            <connections>
+                                <action selector="btnNotificationAction:" destination="btL-x1-TP6" id="QPh-Jd-Apo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webview" destination="QNR-AS-tjf" id="Dzf-Ek-t0X"/>
                     </connections>
@@ -111,7 +123,13 @@
                             <constraint firstItem="UMs-AG-0nA" firstAttribute="top" secondItem="vSA-OL-UKw" secondAttribute="top" id="jZi-Jq-A4D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aeG-pI-1S1"/>
+                    <navigationItem key="navigationItem" id="aeG-pI-1S1">
+                        <barButtonItem key="rightBarButtonItem" image="Notification" id="HwT-ut-5NL">
+                            <connections>
+                                <action selector="btnNotificationAction:" destination="LUd-Qh-7wu" id="wsY-6V-d2f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webview" destination="UMs-AG-0nA" id="La8-e8-qtt"/>
                     </connections>
@@ -200,4 +218,7 @@
             <point key="canvasLocation" x="1574" y="339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Notification" width="12" height="12"/>
+    </resources>
 </document>

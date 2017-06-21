@@ -27,6 +27,8 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - User defined methods
+
 -(void)setUIElements{
     CGRect frame = CGRectMake(0, 0, 200, 40);
     
@@ -58,8 +60,14 @@
         NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:self.urlToLoad]];
         [webview loadRequest:request];
     }
-    
 }
+
+#pragma mark - IBACtions
+- (IBAction)btnNotificationAction:(UIBarButtonItem *)sender {
+    CommonWebViewController *webviewController = [[CommonClass sharedInstance]getCommonWebviewController:NOTIFICATION_URL isDrawerEnable:false];
+    [self.navigationController pushViewController:webviewController animated:YES];
+}
+
 
 /*
 #pragma mark - Navigation

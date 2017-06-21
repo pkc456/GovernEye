@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <AFNetworking/AFNetworking.h>
+#import "Loginhandler.h"
 #import "CommonWebViewController.h"
 #import "AppDelegate.h"
 #import "NavigationDrawerViewController.h"
@@ -110,74 +110,52 @@
 }
 
 -(void)pushToWebView:(NSString *)url{
-    CommonWebViewController *webviewController = [[CommonWebViewController alloc]initWithNibName:@"CommonWebViewController" bundle:nil];
-    webviewController.urlToLoad = url;
-    webviewController.isDrawerEnabled = false;
+    CommonWebViewController *webviewController = [[CommonClass sharedInstance]getCommonWebviewController:url isDrawerEnable:false];
     [self.navigationController pushViewController:webviewController animated:YES];
 }
 
 
 -(void)callLoginWebService{
-    [[CommonClass sharedInstance] showLoader:self.view];
-    NSString *postParams = [NSString stringWithFormat:@"email=%@&password=%@",textfieldEmail.text,textfieldPassword.text];
-    NSData *data = [postParams dataUsingEncoding:NSUTF8StringEncoding];
+    Loginhandler *loginHandler = [[Loginhandler alloc]init];
+    [loginHandler callLoginService:self.view
+                       emailString:textfieldEmail.text
+                    passwordString:textfieldPassword.text
+                 completionHandler:^(NSInteger statusCode, NSDictionary *headerFields) {
+                     if(statusCode == 200){
+                         [self showAlert:@"Enter valid credentials"];
+                     }else if (statusCode == 302){
+                         [self saveCookieDataToUserModel:headerFields];
+                         [self showHomeTabBarView];
+                     }
+                 }];
+}
 
-    NSMutableURLRequest *myRequest = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:LOGIN_URL]];
-    [myRequest setHTTPMethod:@"POST"];
-    [myRequest setHTTPBody:data];
+-(void)saveCookieDataToUserModel:(NSDictionary *)headers
+{
+    //Cookies
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
+    NSArray                  *cookies;
+    cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:headers forURL:[NSURL URLWithString:LOGIN_URL]];
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage]setCookies:cookies forURL:[NSURL URLWithString:LOGIN_URL] mainDocumentURL:nil];
     
+    //Saving user details + header fields
+    NSMutableDictionary *data = [headers mutableCopy];
+    [data setObject:textfieldEmail.text forKey:Key_Username_For_Profile_url];
     
-    AFHTTPRequestOperation *uploadOperation = [[AFHTTPRequestOperation alloc] initWithRequest:myRequest];
-    [uploadOperation start];
-    [uploadOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id response) {
-        NSLog(@"Request: %@", [operation.request description]);
-        NSLog(@"CODE: %li",(long)operation.response.statusCode);
-//        NSLog(@"Response: %@", [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding]);
-        
-        if(operation.response.statusCode == 200){
-            [self showAlert:@"Enter valid credentials"];
-        }
-        [[CommonClass sharedInstance] hideLoader:self.view];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [[CommonClass sharedInstance] hideLoader:self.view];
-        NSLog(@"error: %@",error);
-    }];
+    if(buttonRememberMe.selected){
+        [data setObject:textfieldEmail.text forKey:Key_User_Model_Username];
+        [data setObject:textfieldPassword.text forKey:Key_User_Model_Password];
+    }
     
-    [uploadOperation setRedirectResponseBlock:^NSURLRequest *(NSURLConnection *connection, NSURLRequest *request, NSURLResponse *redirectResponse) {
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) redirectResponse;
-        NSLog(@"response status code: %ld", (long)[httpResponse statusCode]);
-        
-        NSInteger statusCode = httpResponse.statusCode;
-        if(statusCode == 302){
-            request = nil;
-            NSLog(@"Header field%@",httpResponse.allHeaderFields);
-            
-            //Cookies
-            [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
-            NSArray                  *cookies;
-            cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:[httpResponse allHeaderFields] forURL:[NSURL URLWithString:LOGIN_URL]];
-            [[NSHTTPCookieStorage sharedHTTPCookieStorage]setCookies:cookies forURL:[NSURL URLWithString:LOGIN_URL] mainDocumentURL:nil];
-              
-            
-            //Saving user details + header fields
-            NSMutableDictionary *data = [httpResponse.allHeaderFields mutableCopy];
-            [data setObject:textfieldEmail.text forKey:Key_Username_For_Profile_url];
-            
-            if(buttonRememberMe.selected){
-                [data setObject:textfieldEmail.text forKey:Key_User_Model_Username];
-                [data setObject:textfieldPassword.text forKey:Key_User_Model_Password];
-            }
-            
-          [[CommonClass sharedInstance]saveUserDetails:data];            
-            
-            User *user = [[CommonClass sharedInstance]getUserDetails];
-            NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,user.Location,MOBILESITE];
-            [self showTabBarHomeView:homeUrl];
-        }
-        
-        
-        return request;
-    }];
+    [[CommonClass sharedInstance]saveUserDetails:data];        
+}
+
+-(void)showHomeTabBarView{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        User *user = [[CommonClass sharedInstance]getUserDetails];
+        NSString *homeUrl = [NSString stringWithFormat:@"%@%@%@",BASE_URL,user.Location,MOBILESITE];
+        [self showTabBarHomeView:homeUrl];
+    });
 }
 
 -(void)showAlert:(NSString *)message{

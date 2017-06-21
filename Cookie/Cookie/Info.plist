@@ -33,6 +33,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access to capture photo</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need photo library access to get photo</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

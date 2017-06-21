@@ -8,7 +8,7 @@
 
 #import "CommonClass.h"
 #import "User.h"
-
+#import "CommonWebViewController.h"
 
 @implementation CommonClass
 
@@ -79,6 +79,15 @@
 -(UINavigationController *)getNavigationDrawerController{
     UINavigationController *navDrawer = [[UIStoryboard storyboardWithName:@"NavigationDrawer" bundle:nil] instantiateViewControllerWithIdentifier:@"NavigationDrawerNavViewController"];
     return navDrawer;
+}
+
+#pragma mark - Common web controller using xib
+-(CommonWebViewController *)getCommonWebviewController:(NSString *)url isDrawerEnable:(BOOL)isDrawer
+{
+    CommonWebViewController *webviewController = [[CommonWebViewController alloc]initWithNibName:@"CommonWebViewController" bundle:nil];
+    webviewController.urlToLoad = url;
+    webviewController.isDrawerEnabled = isDrawer;
+    return webviewController;
 }
 
 @end
