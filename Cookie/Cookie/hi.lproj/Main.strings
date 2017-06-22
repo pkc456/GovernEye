@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "4LJ-6b-mTW"; */
+"4LJ-6b-mTW.normalTitle" = "Forgot Password? H";
+
+/* Class = "UINavigationItem"; title = "Governeye"; ObjectID = "8TE-3g-7lL"; */
+"8TE-3g-7lL.title" = "Governeye";
+
+/* Class = "UIButton"; normalTitle = "Remember Me"; ObjectID = "Ekk-P8-ztI"; */
+"Ekk-P8-ztI.normalTitle" = "Remember Me H";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "M74-B8-mu2"; */
+"M74-B8-mu2.normalTitle" = "English";
+
+/* Class = "UIButton"; normalTitle = "Hindi"; ObjectID = "O7S-zQ-WuJ"; */
+"O7S-zQ-WuJ.normalTitle" = "Hindi";
+
+/* Class = "UIButton"; normalTitle = "SIGN IN"; ObjectID = "QoT-Em-I44"; */
+"QoT-Em-I44.normalTitle" = "SIGN IN";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "R7b-nT-m50"; */
+"R7b-nT-m50.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "VFS-eS-u6J"; */
+"VFS-eS-u6J.placeholder" = "Username";
+
+/* Class = "UIButton"; normalTitle = "Create an Account"; ObjectID = "l2Y-7K-w94"; */
+"l2Y-7K-w94.normalTitle" = "Create an Account";

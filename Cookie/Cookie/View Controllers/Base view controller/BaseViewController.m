@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "LocalizeHelper.h"
 
 @interface BaseViewController ()
 
@@ -16,6 +17,8 @@
 
 //The use of this method is because of app delegate. We create instance of base view controller in app delegate.
 -(instancetype)init{
+    self = [super init];
+    
     [self configureUserDataBaseObj];
     return self;
 }
@@ -78,5 +81,13 @@
                                callback:nil];
 }
 
+#pragma mark - Localization
+-(void)setDefaultLanguageOfApp:(NSString *)language{
+    [[LocalizeHelper sharedLocalSystem] setLanguage:language];
+}
+
+-(NSString *)getLocalizedStringForKey:(NSString *)key{
+    return [[LocalizeHelper sharedLocalSystem]localizedStringForKey:key];
+}
 
 @end

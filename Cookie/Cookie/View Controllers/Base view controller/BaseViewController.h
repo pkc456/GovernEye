@@ -21,4 +21,9 @@
 -(void)showAlert:(NSString *)message type:(RMessageType )messageType;
 
 -(void)saveCookies:(NSDictionary *)headers;
+
+
+-(void)setDefaultLanguageOfApp:(NSString *)language;
+-(NSString *)getLocalizedStringForKey:(NSString *)key;
+
 @end

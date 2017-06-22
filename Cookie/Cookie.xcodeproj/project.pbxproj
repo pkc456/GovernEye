@@ -10,6 +10,8 @@
 		4AEC71CAE5101EBC96CCD303 /* libPods-Cookie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 622BD05CAD85D8764CCA9C22 /* libPods-Cookie.a */; };
 		9905FB6F1EF7BC6E00D3952D /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9905FB6D1EF7BC6E00D3952D /* CommonWebViewController.m */; };
 		9905FB701EF7BC6E00D3952D /* CommonWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9905FB6E1EF7BC6E00D3952D /* CommonWebViewController.xib */; };
+		990875F11EFBE1DA00338832 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 990875F31EFBE1DA00338832 /* Localizable.strings */; };
+		990876021EFBE6E000338832 /* LocalizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 990876011EFBE6E000338832 /* LocalizeHelper.m */; };
 		9935EC371EF9307D005E7F0D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9935EC361EF9307D005E7F0D /* User.m */; };
 		99460B5E1EF7DD2200AB7FB0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99460B5D1EF7DD2200AB7FB0 /* Home.storyboard */; };
 		99460B621EF7DD4E00AB7FB0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99460B611EF7DD4E00AB7FB0 /* HomeViewController.m */; };
@@ -33,6 +35,13 @@
 		9905FB6C1EF7BC6E00D3952D /* CommonWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonWebViewController.h; sourceTree = "<group>"; };
 		9905FB6D1EF7BC6E00D3952D /* CommonWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonWebViewController.m; sourceTree = "<group>"; };
 		9905FB6E1EF7BC6E00D3952D /* CommonWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonWebViewController.xib; sourceTree = "<group>"; };
+		990875F21EFBE1DA00338832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		990875F41EFBE1DF00338832 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		990876001EFBE6E000338832 /* LocalizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizeHelper.h; sourceTree = "<group>"; };
+		990876011EFBE6E000338832 /* LocalizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizeHelper.m; sourceTree = "<group>"; };
+		990876031EFBE86700338832 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Main.strings; sourceTree = "<group>"; };
+		990876041EFBE86700338832 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		990876051EFBE86700338832 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9935EC351EF9307D005E7F0D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		9935EC361EF9307D005E7F0D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		99460B591EF7BFEB00AB7FB0 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
@@ -103,6 +112,15 @@
 			path = "Web view controller";
 			sourceTree = "<group>";
 		};
+		990875FF1EFBE6BC00338832 /* Localization Helper */ = {
+			isa = PBXGroup;
+			children = (
+				990876001EFBE6E000338832 /* LocalizeHelper.h */,
+				990876011EFBE6E000338832 /* LocalizeHelper.m */,
+			);
+			path = "Localization Helper";
+			sourceTree = "<group>";
+		};
 		9935EC331EF92F04005E7F0D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +141,7 @@
 		99460B571EF7BFE100AB7FB0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				990875FF1EFBE6BC00338832 /* Localization Helper */,
 				99D31E401EFA545300572B83 /* Web service handler */,
 				99460B581EF7BFE100AB7FB0 /* Constant */,
 				99460B631EF7DDB500AB7FB0 /* CommonClass.h */,
@@ -251,6 +270,7 @@
 			children = (
 				99D4F8A41EF410BF008693AA /* main.m */,
 				99460B5A1EF7C05C00AB7FB0 /* PrefixHeader.pch */,
+				990875F31EFBE1DA00338832 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -309,6 +329,7 @@
 			knownRegions = (
 				en,
 				Base,
+				hi,
 			);
 			mainGroup = 99D4F8971EF410BE008693AA;
 			productRefGroup = 99D4F8A11EF410BF008693AA /* Products */;
@@ -328,6 +349,7 @@
 				99D4F8B31EF410BF008693AA /* LaunchScreen.storyboard in Resources */,
 				99460B681EF7E32800AB7FB0 /* NavigationDrawer.storyboard in Resources */,
 				99460B5E1EF7DD2200AB7FB0 /* Home.storyboard in Resources */,
+				990875F11EFBE1DA00338832 /* Localizable.strings in Resources */,
 				99D4F8B01EF410BF008693AA /* Assets.xcassets in Resources */,
 				9905FB701EF7BC6E00D3952D /* CommonWebViewController.xib in Resources */,
 				99D4F8AE1EF410BF008693AA /* Main.storyboard in Resources */,
@@ -396,6 +418,7 @@
 				99460B651EF7DDB500AB7FB0 /* CommonClass.m in Sources */,
 				99460B6C1EF7E36000AB7FB0 /* NavigationDrawerViewController.m in Sources */,
 				99D4F8A81EF410BF008693AA /* AppDelegate.m in Sources */,
+				990876021EFBE6E000338832 /* LocalizeHelper.m in Sources */,
 				9905FB6F1EF7BC6E00D3952D /* CommonWebViewController.m in Sources */,
 				99460B621EF7DD4E00AB7FB0 /* HomeViewController.m in Sources */,
 				99D4F8A51EF410BF008693AA /* main.m in Sources */,
@@ -405,10 +428,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		990875F31EFBE1DA00338832 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				990875F21EFBE1DA00338832 /* Base */,
+				990875F41EFBE1DF00338832 /* en */,
+				990876051EFBE86700338832 /* hi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		99D4F8AC1EF410BF008693AA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				99D4F8AD1EF410BF008693AA /* Base */,
+				990876031EFBE86700338832 /* hi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -417,6 +451,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				99D4F8B21EF410BF008693AA /* Base */,
+				990876041EFBE86700338832 /* hi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -428,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -476,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

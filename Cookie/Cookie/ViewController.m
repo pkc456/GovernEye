@@ -22,7 +22,7 @@
     [super viewDidLoad];
     [self getUserDetails];
     [self setTiteOf];
-    
+    [self setLocalizedStringOnUIElements];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -42,6 +42,13 @@
     [viewHeader addSubview:imageView];
     self.navigationItem.titleView = viewHeader;
 }
+
+
+-(void)setLocalizedStringOnUIElements{
+    [buttonForgotPassword setTitle:[self getLocalizedStringForKey:@"Forgot Password"]
+                          forState:UIControlStateNormal];
+}
+
 
 -(void)getUserDetails{
     if(self.userObject != nil){
@@ -67,6 +74,17 @@
 - (IBAction)btnForgotPasswordAction:(UIButton *)sender {
     [self pushToWebView:FORGOT_URL];
 }
+
+- (IBAction)btnHindiAction:(UIButton *)sender {
+    [self setDefaultLanguageOfApp:LANGUAGE_HINDI];
+    [self setLocalizedStringOnUIElements];
+}
+
+- (IBAction)btnEnglishAction:(UIButton *)sender {
+    [self setDefaultLanguageOfApp:LANGUAGE_ENGLISH];
+    [self setLocalizedStringOnUIElements];
+}
+
 
 #pragma mark - user defined
 -(BOOL)isValid{

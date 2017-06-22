@@ -17,7 +17,11 @@
     
     __weak IBOutlet UIButton *buttonRememberMe;
     __weak IBOutlet UITextField *textfieldPassword;
+ 
     
+    //For localization
+    
+    __weak IBOutlet UIButton *buttonForgotPassword;
 }
 
 @end

@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Cookie
+
+  Created by pradeep.chaudhary on 6/22/17.
+  Copyright © 2017 pradeep.chaudhary. All rights reserved.
+*/
+
+
+/* for debugging */
+"languageOfBundle" = "English - English";
+
+
+"Username" = "Username";
+"Password" = "Password";
+"Create an Account" = "Create an Account";
+"SIGN IN" = "SIGN IN";
+"Forgot Password" = "Forgot Password";

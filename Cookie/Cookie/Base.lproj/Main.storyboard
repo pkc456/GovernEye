@@ -96,14 +96,32 @@
                                     <action selector="btnRememberAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5jE-WE-4T9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7S-zQ-WuJ">
+                                <rect key="frame" x="47" y="293" width="36" height="30"/>
+                                <state key="normal" title="Hindi"/>
+                                <connections>
+                                    <action selector="btnHindiAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6gO-jm-kaT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M74-B8-mu2">
+                                <rect key="frame" x="144" y="293" width="50" height="30"/>
+                                <state key="normal" title="English"/>
+                                <connections>
+                                    <action selector="btnEnglishAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ojy-3r-hpF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="VFS-eS-u6J" secondAttribute="trailing" constant="15" id="0Qa-ZV-4pW"/>
                             <constraint firstItem="QoT-Em-I44" firstAttribute="trailing" secondItem="R7b-nT-m50" secondAttribute="trailing" id="3sL-Mx-zrJ"/>
                             <constraint firstItem="QoT-Em-I44" firstAttribute="top" secondItem="R7b-nT-m50" secondAttribute="bottom" constant="25" id="6YI-gK-jJ7"/>
+                            <constraint firstItem="M74-B8-mu2" firstAttribute="top" secondItem="O7S-zQ-WuJ" secondAttribute="top" id="95j-Ov-GRF"/>
+                            <constraint firstItem="M74-B8-mu2" firstAttribute="leading" secondItem="O7S-zQ-WuJ" secondAttribute="trailing" constant="61" id="9li-cx-Q2o"/>
+                            <constraint firstItem="O7S-zQ-WuJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="47" id="BF1-rT-esb"/>
                             <constraint firstItem="Ekk-P8-ztI" firstAttribute="top" secondItem="4LJ-6b-mTW" secondAttribute="top" id="IDT-yr-Dp3"/>
                             <constraint firstItem="VFS-eS-u6J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="25" id="Izb-5v-zJV"/>
+                            <constraint firstItem="O7S-zQ-WuJ" firstAttribute="top" secondItem="4LJ-6b-mTW" secondAttribute="bottom" constant="73" id="Jzl-Ok-nHZ"/>
                             <constraint firstItem="VFS-eS-u6J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="OaW-IY-EoT"/>
                             <constraint firstItem="4LJ-6b-mTW" firstAttribute="leading" secondItem="l2Y-7K-w94" secondAttribute="leading" id="P0E-68-E3f"/>
                             <constraint firstItem="R7b-nT-m50" firstAttribute="leading" secondItem="VFS-eS-u6J" secondAttribute="leading" id="Zoc-DI-6S1"/>
@@ -117,6 +135,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Governeye" id="8TE-3g-7lL"/>
                     <connections>
+                        <outlet property="buttonForgotPassword" destination="4LJ-6b-mTW" id="3z8-TQ-h7K"/>
                         <outlet property="buttonRememberMe" destination="Ekk-P8-ztI" id="DUi-7k-Ruh"/>
                         <outlet property="textfieldEmail" destination="VFS-eS-u6J" id="oKO-wi-GUt"/>
                         <outlet property="textfieldPassword" destination="R7b-nT-m50" id="0xk-jz-Ofi"/>
