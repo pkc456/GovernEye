@@ -10,6 +10,7 @@
 #import "CommonWebViewController.h"
 #import "User.h"
 #import "Loginhandler.h"
+#import "BaseViewController.h"
 
 @interface AppDelegate ()
 {
@@ -25,11 +26,11 @@
     
     [self autoLogin];
     
-    
-    User *user = [[CommonClass sharedInstance]getUserDetails];
-    if(user != nil && user.username != nil){
+    BaseViewController *baseVC = [[BaseViewController alloc]init];
+    if(baseVC.isUserObjectExist){
         [self showHomeTabBarView];
     }
+    
     
     return YES;
 }
@@ -65,9 +66,9 @@
 -(void)autoLogin{
     semaphore = dispatch_semaphore_create(0);
     
-    User *user = [[CommonClass sharedInstance]getUserDetails];
-    if(user != nil && user.username != nil){
-        [self callLoginWebService:user.username passwordString:user.password];
+    BaseViewController *baseVC = [[BaseViewController alloc]init];
+    if(baseVC.isUserObjectExist){
+        [self callLoginWebService:baseVC.userObject.username passwordString:baseVC.userObject.password];
     }else{
         dispatch_semaphore_signal(semaphore);
     }

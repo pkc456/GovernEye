@@ -14,6 +14,10 @@
 
 @property (nonatomic, strong) User *userObject;
 
+
+-(void)updateUserModelObjectOnLogout;
+-(BOOL)isUserObjectExist;
+
 -(void)showAlert:(NSString *)message type:(RMessageType )messageType;
 
 @end

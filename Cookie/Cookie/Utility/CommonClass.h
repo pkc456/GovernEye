@@ -24,6 +24,7 @@
 -(void)hideLoader:(UIView *)view;
 
 -(void)saveUserDetails:(NSDictionary *)dic;
+-(void)saveUserDetailsWithUserObject:(User *)userObject;
 -(User *)getUserDetails;
 
 -(UITabBarController *)getMainTabController;

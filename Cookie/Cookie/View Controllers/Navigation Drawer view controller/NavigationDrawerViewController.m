@@ -80,6 +80,7 @@
         }
         case 3:
         {
+            [self updateUserModelObjectOnLogout];
             [self showLoginScreen];
             break;
         }

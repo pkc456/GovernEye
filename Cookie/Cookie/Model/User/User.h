@@ -22,12 +22,16 @@
 @property (nonatomic, strong)NSString *usernameForProfileUrl;
 
 -(User *)initWithHeaderDetails:(NSDictionary *)dic;
-//
-//Accept-Ranges
-//Cache-Control
-//Connection
-//Content-Encoding
-//Content-Length
-//Content-Type
 
+
+
+
+
+//////////////*******************************/////////////////
+
+            //1. On logout, Location will be deleted.
+            //2. On Auto login at app delete, Location will be checked.
+
+
+//////////////*******************************/////////////////
 @end

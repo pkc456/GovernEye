@@ -14,25 +14,45 @@
 
 @implementation BaseViewController
 
+//The use of this method is because of app delegate. We create instance of base view controller in app delegate.
+-(instancetype)init{
+    [self configureUserDataBaseObj];
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     [self configureUserDataBaseObj];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    
-}
 
+#pragma mark - user object
 - (void)configureUserDataBaseObj {
     self.userObject = [[CommonClass sharedInstance]getUserDetails];
 }
+
+-(void)updateUserModelObjectOnLogout{
+    self.userObject.usernameForProfileUrl = nil;
+    [[CommonClass sharedInstance]saveUserDetailsWithUserObject:self.userObject];
+}
+
+-(BOOL)isUserObjectExist{
+    if(self.userObject != nil && self.userObject.usernameForProfileUrl != nil){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 
+#pragma mark - Alert
 -(void)showAlert:(NSString *)message type:(RMessageType )messageType{
     [RMessage showNotificationWithTitle:@""
                                subtitle:message
@@ -40,4 +60,6 @@
                          customTypeName:nil
                                callback:nil];
 }
+
+
 @end

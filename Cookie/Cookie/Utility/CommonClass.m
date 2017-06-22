@@ -46,6 +46,12 @@
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
+-(void)saveUserDetailsWithUserObject:(User *)userObject{
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:userObject];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:KEY_USER_MODEL];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
 -(User *)getUserDetails{
     NSData *userData =  [self getValueToUserDefault:KEY_USER_MODEL];
     if(userData ==nil){
