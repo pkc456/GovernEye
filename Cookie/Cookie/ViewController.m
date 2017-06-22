@@ -129,11 +129,7 @@
 
 -(void)saveCookieDataToUserModel:(NSDictionary *)headers
 {
-    //Cookies
-    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
-    NSArray                  *cookies;
-    cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:headers forURL:[NSURL URLWithString:LOGIN_URL]];
-    [[NSHTTPCookieStorage sharedHTTPCookieStorage]setCookies:cookies forURL:[NSURL URLWithString:LOGIN_URL] mainDocumentURL:nil];
+    [self saveCookies:headers];        
     
     //Saving user details + header fields
     NSMutableDictionary *data = [headers mutableCopy];

@@ -34,6 +34,7 @@
 }
 
 -(void)updateUserModelObjectOnLogout{
+    [self deleteCookies];
     self.userObject.usernameForProfileUrl = nil;
     [[CommonClass sharedInstance]saveUserDetailsWithUserObject:self.userObject];
 }
@@ -46,11 +47,27 @@
     }
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Cookies
+-(void)saveCookies:(NSDictionary *)headers{
+    //Cookies
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
+    NSArray                  *cookies;
+    cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:headers forURL:[NSURL URLWithString:LOGIN_URL]];
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage]setCookies:cookies forURL:[NSURL URLWithString:LOGIN_URL] mainDocumentURL:nil];
+    
+}
+
+-(void)deleteCookies{
+    NSArray *cookieArray = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:LOGIN_URL]];
+    
+    for (NSHTTPCookie *cookie in cookieArray) {
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage]deleteCookie:cookie];
+    }
+}
 
 #pragma mark - Alert
 -(void)showAlert:(NSString *)message type:(RMessageType )messageType{
