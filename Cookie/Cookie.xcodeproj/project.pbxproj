@@ -522,7 +522,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Kumar (2VEW8VQ26K)";
 				DEVELOPMENT_TEAM = 85C66DK85D;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Projects/Dummy/Cookie/Cookie/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = $SRCROOT/Cookie/PrefixHeader.pch;
 				INFOPLIST_FILE = Cookie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -541,7 +541,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Kumar (2VEW8VQ26K)";
 				DEVELOPMENT_TEAM = 85C66DK85D;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Projects/Dummy/Cookie/Cookie/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = $SRCROOT/Cookie/PrefixHeader.pch;
 				INFOPLIST_FILE = Cookie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
