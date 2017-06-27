@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Cookie
+
+  Created by pradeep.chaudhary on 6/22/17.
+  Copyright © 2017 pradeep.chaudhary. All rights reserved.
+*/
+
+
+/* for debugging */
+"languageOfBundle" = "Hindi - Hindi";
+
+//Login view controller
+"Username" = "उपयोगकर्ता नाम";
+"Password" = "पासवर्ड";
+"Create an Account" = "खाता बनाएं";
+"SIGN IN" = "साइन इन करें";
+"Forgot Password" = "पासवर्ड भूल गए";
+"Enter password" = "पास वर्ड दर्ज करें";
+"Enter username" = "उपयोगकर्ता नाम दर्ज करें";
+"Enter valid credentials" = "मान्य क्रेडेंशियल्स दर्ज करें";
+
+
+
+//Navigation drawer
+"Home" = "घर";
+"User Profile" = "उपयोगकर्ता प्रोफ़ाइल";
+"User Settings" = "उपयोगकर्ता सेटिंग";
+"Logout" = "लोग आउट";

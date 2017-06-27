@@ -21,6 +21,11 @@
 #define NOTIFICATION_URL BASE_URL "/activity/notifications" MOBILESITE
 #define BOOKMARK_URL BASE_URL "/bookmark/view" MOBILESITE
 
+//Langugage keys. http://www.loc.gov/standards/iso639-2/php/English_list.php
+#pragma mark - Localization keys
+#define KLANGUAGE_STORE_KEY  @"LangaugeBundleKey"
+#define LANGUAGE_HINDI @"hi"
+#define LANGUAGE_ENGLISH @"en"
 
 //Links related to navigaiton drawer
 #define LOGOUT_URL BASE_URL "/logout"

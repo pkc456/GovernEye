@@ -18,7 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    arrayItems = [[NSArray alloc]initWithObjects:[self getLocalizedStringForKey:@"Home"],
+                  [self getLocalizedStringForKey:@"User Profile"],
+                  [self getLocalizedStringForKey:@"User Settings"],
+                  [self getLocalizedStringForKey:@"Logout"],
+                nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +32,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return arrayItems.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -36,23 +41,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-    NSString *text = @"";
-    switch (indexPath.row) {
-        case 0:
-            text = @"Home";
-            break;
-        case 1:
-            text = @"User Profile";
-            break;
-        case 2:
-            text = @"User Settings";
-            break;
-        case 3:
-            text = @"Logout";
-            break;
-        default:
-            break;
-    }
+    NSString *text = arrayItems[indexPath.row];
     cell.textLabel.text = text;
     return cell;
 }

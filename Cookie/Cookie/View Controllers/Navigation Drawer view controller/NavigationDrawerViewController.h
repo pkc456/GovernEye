@@ -11,7 +11,7 @@
 
 @interface NavigationDrawerViewController : BaseViewController
 {
-    
+    NSArray *arrayItems;
     __weak IBOutlet UITableView *tableviewSideMenu;
 }
 @end

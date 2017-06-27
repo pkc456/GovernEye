@@ -36,6 +36,9 @@
                                         <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nf6-rK-k2n"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R7b-nT-m50">
                                 <rect key="frame" x="15" y="80" width="345" height="30"/>
@@ -47,8 +50,11 @@
                                         <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gtc-MS-5UY"/>
+                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-Em-I44">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-Em-I44">
                                 <rect key="frame" x="285" y="135" width="75" height="29"/>
                                 <color key="backgroundColor" red="0.2470588235" green="0.64313725489999995" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -67,15 +73,17 @@
                                     <action selector="btnSignInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfn-1P-W1d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Y-7K-w94">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Y-7K-w94">
                                 <rect key="frame" x="15" y="135" width="113" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Create an Account"/>
+                                <state key="normal" title="Create an Account">
+                                    <color key="titleColor" red="0.29803921570000003" green="0.70588235290000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="btnSignUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FGE-Hn-4ED"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LJ-6b-mTW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LJ-6b-mTW">
                                 <rect key="frame" x="15" y="193" width="101" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Forgot Password?">
@@ -96,28 +104,95 @@
                                     <action selector="btnRememberAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5jE-WE-4T9"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7S-zQ-WuJ">
+                                <rect key="frame" x="47" y="293" width="36" height="30"/>
+                                <state key="normal" title="Hindi"/>
+                                <connections>
+                                    <action selector="btnHindiAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6gO-jm-kaT"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M74-B8-mu2">
+                                <rect key="frame" x="144" y="293" width="50" height="30"/>
+                                <state key="normal" title="English"/>
+                                <connections>
+                                    <action selector="btnEnglishAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ojy-3r-hpF"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sy-RK-avm">
+                                <rect key="frame" x="15" y="453" width="345" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="KN1-yx-Xcv"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="95P-5a-Uoo">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="xOv-u2-xtN" customClass="LoginCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ej9-Se-g8d">
+                                                    <rect key="frame" x="7.5" y="17.5" width="35.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Ej9-Se-g8d" firstAttribute="centerY" secondItem="xOv-u2-xtN" secondAttribute="centerY" id="7hD-Rd-Rxx"/>
+                                            <constraint firstItem="Ej9-Se-g8d" firstAttribute="centerX" secondItem="xOv-u2-xtN" secondAttribute="centerX" id="Dxb-aD-Tei"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="labelName" destination="Ej9-Se-g8d" id="mIv-bl-kU4"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mUg-4j-hZa"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="81F-9l-qAQ"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Sy-RK-avm" secondAttribute="bottom" id="0Nh-wy-hGz"/>
                             <constraint firstAttribute="trailing" secondItem="VFS-eS-u6J" secondAttribute="trailing" constant="15" id="0Qa-ZV-4pW"/>
                             <constraint firstItem="QoT-Em-I44" firstAttribute="trailing" secondItem="R7b-nT-m50" secondAttribute="trailing" id="3sL-Mx-zrJ"/>
                             <constraint firstItem="QoT-Em-I44" firstAttribute="top" secondItem="R7b-nT-m50" secondAttribute="bottom" constant="25" id="6YI-gK-jJ7"/>
+                            <constraint firstItem="M74-B8-mu2" firstAttribute="top" secondItem="O7S-zQ-WuJ" secondAttribute="top" id="95j-Ov-GRF"/>
+                            <constraint firstItem="M74-B8-mu2" firstAttribute="leading" secondItem="O7S-zQ-WuJ" secondAttribute="trailing" constant="61" id="9li-cx-Q2o"/>
+                            <constraint firstItem="O7S-zQ-WuJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="47" id="BF1-rT-esb"/>
                             <constraint firstItem="Ekk-P8-ztI" firstAttribute="top" secondItem="4LJ-6b-mTW" secondAttribute="top" id="IDT-yr-Dp3"/>
                             <constraint firstItem="VFS-eS-u6J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="25" id="Izb-5v-zJV"/>
+                            <constraint firstItem="O7S-zQ-WuJ" firstAttribute="top" secondItem="4LJ-6b-mTW" secondAttribute="bottom" constant="73" id="Jzl-Ok-nHZ"/>
                             <constraint firstItem="VFS-eS-u6J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="OaW-IY-EoT"/>
                             <constraint firstItem="4LJ-6b-mTW" firstAttribute="leading" secondItem="l2Y-7K-w94" secondAttribute="leading" id="P0E-68-E3f"/>
+                            <constraint firstItem="2Sy-RK-avm" firstAttribute="trailing" secondItem="Ekk-P8-ztI" secondAttribute="trailing" id="SV7-j9-OuU"/>
                             <constraint firstItem="R7b-nT-m50" firstAttribute="leading" secondItem="VFS-eS-u6J" secondAttribute="leading" id="Zoc-DI-6S1"/>
                             <constraint firstItem="l2Y-7K-w94" firstAttribute="top" secondItem="QoT-Em-I44" secondAttribute="top" id="ffM-cq-SoT"/>
                             <constraint firstItem="4LJ-6b-mTW" firstAttribute="top" secondItem="l2Y-7K-w94" secondAttribute="bottom" constant="30" id="ffZ-My-zD0"/>
                             <constraint firstItem="l2Y-7K-w94" firstAttribute="leading" secondItem="R7b-nT-m50" secondAttribute="leading" id="fzm-Ng-LK6"/>
                             <constraint firstItem="R7b-nT-m50" firstAttribute="trailing" secondItem="VFS-eS-u6J" secondAttribute="trailing" id="jCO-nL-ncZ"/>
                             <constraint firstItem="R7b-nT-m50" firstAttribute="top" secondItem="VFS-eS-u6J" secondAttribute="bottom" constant="25" id="ph3-8C-gav"/>
+                            <constraint firstItem="2Sy-RK-avm" firstAttribute="leading" secondItem="4LJ-6b-mTW" secondAttribute="leading" id="sLj-9K-zAd"/>
                             <constraint firstItem="Ekk-P8-ztI" firstAttribute="trailing" secondItem="QoT-Em-I44" secondAttribute="trailing" id="zDG-fO-nDL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Governeye" id="8TE-3g-7lL"/>
                     <connections>
+                        <outlet property="buttonForgotPassword" destination="4LJ-6b-mTW" id="3z8-TQ-h7K"/>
                         <outlet property="buttonRememberMe" destination="Ekk-P8-ztI" id="DUi-7k-Ruh"/>
+                        <outlet property="buttonSignIn" destination="QoT-Em-I44" id="DZW-yr-GKw"/>
+                        <outlet property="buttonSignUp" destination="l2Y-7K-w94" id="1jQ-Rv-ESR"/>
+                        <outlet property="collectionview" destination="2Sy-RK-avm" id="yw2-JT-K7g"/>
                         <outlet property="textfieldEmail" destination="VFS-eS-u6J" id="oKO-wi-GUt"/>
                         <outlet property="textfieldPassword" destination="R7b-nT-m50" id="0xk-jz-Ofi"/>
                         <outlet property="webview" destination="Mq6-5O-7Iv" id="nVc-OY-7yt"/>
