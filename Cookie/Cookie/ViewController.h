@@ -18,7 +18,8 @@
     __weak IBOutlet UIButton *buttonRememberMe;
     __weak IBOutlet UITextField *textfieldPassword;
  
-    
+    __weak IBOutlet UICollectionView *collectionview;
+    NSArray *arrayLanguage;
     //For localization
     
     __weak IBOutlet UIButton *buttonSignUp;

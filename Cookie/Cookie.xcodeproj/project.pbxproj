@@ -18,6 +18,7 @@
 		99460B651EF7DDB500AB7FB0 /* CommonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 99460B641EF7DDB500AB7FB0 /* CommonClass.m */; };
 		99460B681EF7E32800AB7FB0 /* NavigationDrawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99460B671EF7E32800AB7FB0 /* NavigationDrawer.storyboard */; };
 		99460B6C1EF7E36000AB7FB0 /* NavigationDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99460B6B1EF7E36000AB7FB0 /* NavigationDrawerViewController.m */; };
+		9959C54E1F0259F5003F6CFA /* LoginCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9959C54D1F0259F5003F6CFA /* LoginCollectionViewCell.m */; };
 		99D31E441EFA548200572B83 /* Loginhandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D31E431EFA548200572B83 /* Loginhandler.m */; };
 		99D31E481EFA776100572B83 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D31E471EFA776100572B83 /* BaseViewController.m */; };
 		99D4F8A51EF410BF008693AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D4F8A41EF410BF008693AA /* main.m */; };
@@ -54,6 +55,8 @@
 		99460B671EF7E32800AB7FB0 /* NavigationDrawer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationDrawer.storyboard; sourceTree = "<group>"; };
 		99460B6A1EF7E36000AB7FB0 /* NavigationDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationDrawerViewController.h; sourceTree = "<group>"; };
 		99460B6B1EF7E36000AB7FB0 /* NavigationDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationDrawerViewController.m; sourceTree = "<group>"; };
+		9959C54C1F0259F5003F6CFA /* LoginCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCollectionViewCell.h; sourceTree = "<group>"; };
+		9959C54D1F0259F5003F6CFA /* LoginCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCollectionViewCell.m; sourceTree = "<group>"; };
 		99D31E421EFA548200572B83 /* Loginhandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loginhandler.h; sourceTree = "<group>"; };
 		99D31E431EFA548200572B83 /* Loginhandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loginhandler.m; sourceTree = "<group>"; };
 		99D31E461EFA776100572B83 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 				99460B691EF7E34E00AB7FB0 /* Navigation Drawer view controller */,
 				99460B5F1EF7DD3F00AB7FB0 /* Home view controller */,
 				9905FB6B1EF7BC5400D3952D /* Web view controller */,
+				9959C54C1F0259F5003F6CFA /* LoginCollectionViewCell.h */,
+				9959C54D1F0259F5003F6CFA /* LoginCollectionViewCell.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -411,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9959C54E1F0259F5003F6CFA /* LoginCollectionViewCell.m in Sources */,
 				9935EC371EF9307D005E7F0D /* User.m in Sources */,
 				99D31E481EFA776100572B83 /* BaseViewController.m in Sources */,
 				99D31E441EFA548200572B83 /* Loginhandler.m in Sources */,
