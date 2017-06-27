@@ -10,10 +10,19 @@
 /* for debugging */
 "languageOfBundle" = "English - English";
 
+//Login view controller
 
 "Username" = "Username";
 "Password" = "Password";
 "Create an Account" = "Create an Account";
 "SIGN IN" = "SIGN IN";
 "Forgot Password" = "Forgot Password";
+"Enter password" = "Enter password";
+"Enter username" = "Enter username";
+"Enter valid credentials" = "Enter valid credentials";
 
+//Navigation drawer
+"Home" = "Home";
+"User Profile" = "User Profile";
+"User Settings" = "User Settings";
+"Logout" = "Logout";

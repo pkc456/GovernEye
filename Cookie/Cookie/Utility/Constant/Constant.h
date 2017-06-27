@@ -23,6 +23,7 @@
 
 //Langugage keys. http://www.loc.gov/standards/iso639-2/php/English_list.php
 #pragma mark - Localization keys
+#define KLANGUAGE_STORE_KEY  @"LangaugeBundleKey"
 #define LANGUAGE_HINDI @"hi"
 #define LANGUAGE_ENGLISH @"en"
 

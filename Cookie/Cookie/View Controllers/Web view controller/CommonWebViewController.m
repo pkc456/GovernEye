@@ -134,6 +134,7 @@
 
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [self showAlert:error.localizedDescription type:RMessageTypeError];
     [[CommonClass sharedInstance] hideLoader:self.view];
 }
 

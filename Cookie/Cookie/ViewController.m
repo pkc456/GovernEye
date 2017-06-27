@@ -10,7 +10,7 @@
 #import "Loginhandler.h"
 #import "CommonWebViewController.h"
 #import "AppDelegate.h"
-#import "NavigationDrawerViewController.h"
+//#import "NavigationDrawerViewController.h"
 
 @interface ViewController ()
 
@@ -45,8 +45,22 @@
 
 
 -(void)setLocalizedStringOnUIElements{
-    [buttonForgotPassword setTitle:[self getLocalizedStringForKey:@"Forgot Password"]
-                          forState:UIControlStateNormal];
+    //https://stackoverflow.com/a/39071660/988169       //To prevent UIButton's title flashing
+//    [UIView performWithoutAnimation:^{
+    //        [buttonForgotPassword layoutIfNeeded];
+    //        [buttonSignIn layoutIfNeeded];
+    //        [buttonSignUp layoutIfNeeded];
+    //    }];
+    
+        [buttonForgotPassword setTitle:[self getLocalizedStringForKey:@"Forgot Password"]
+                              forState:UIControlStateNormal];
+        [buttonSignIn setTitle:[self getLocalizedStringForKey:@"SIGN IN"]
+                      forState:UIControlStateNormal];
+        [buttonSignUp setTitle:[self getLocalizedStringForKey:@"Create an Account"]
+                      forState:UIControlStateNormal];
+        
+        textfieldEmail.placeholder = [self getLocalizedStringForKey:@"Username"];
+        textfieldPassword.placeholder = [self getLocalizedStringForKey:@"Password"];
 }
 
 
@@ -89,10 +103,10 @@
 #pragma mark - user defined
 -(BOOL)isValid{
     if([textfieldEmail.text isEqualToString:@""]){
-        [self showAlert:@"Enter username" type:RMessageTypeError];
+        [self showAlert:[self getLocalizedStringForKey:@"Enter username"] type:RMessageTypeError];
         return false;
     }else if([textfieldPassword.text isEqualToString:@""]){
-        [self showAlert:@"Enter password" type:RMessageTypeError];
+        [self showAlert:[self getLocalizedStringForKey:@"Enter password"] type:RMessageTypeError];
         return false;
     }
     return true;
@@ -137,7 +151,7 @@
                     passwordString:textfieldPassword.text
                  completionHandler:^(NSInteger statusCode, NSDictionary *headerFields) {
                      if(statusCode == 200){
-                         [self showAlert:@"Enter valid credentials" type:RMessageTypeError];
+                         [self showAlert:[self getLocalizedStringForKey:@"Enter valid credentials"] type:RMessageTypeError];
                      }else if (statusCode == 302){
                          [self saveCookieDataToUserModel:headerFields];
                          [self showHomeTabBarView];

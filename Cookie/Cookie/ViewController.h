@@ -21,6 +21,8 @@
     
     //For localization
     
+    __weak IBOutlet UIButton *buttonSignUp;
+    __weak IBOutlet UIButton *buttonSignIn;
     __weak IBOutlet UIButton *buttonForgotPassword;
 }
 

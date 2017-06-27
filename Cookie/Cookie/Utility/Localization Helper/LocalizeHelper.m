@@ -7,6 +7,7 @@
 //
 
 #import "LocalizeHelper.h"
+#import <objc/runtime.h>
 
 static LocalizeHelper* SingleLocalSystem = nil;
 
@@ -28,8 +29,17 @@ static NSBundle* myBundle = nil;
 - (id) init {
     self = [super init];
     if (self) {
-        myBundle = [NSBundle mainBundle];
+        
+        NSString *selectedLangauge = [[CommonClass sharedInstance]getValueToUserDefault:KLANGUAGE_STORE_KEY];
+        
+        if(selectedLangauge == nil){
+            myBundle = [NSBundle mainBundle];
+        }else{
+            [self setLanguage:selectedLangauge];
+//            myBundle = [NSBundle bundleWithPath:selectedBundlePath];
+        }
     }
+    
     return self;
 }
 
@@ -57,6 +67,9 @@ static NSBundle* myBundle = nil;
             myBundle = [NSBundle mainBundle];
         }
     }
+    
+    //Storing the bundle so that It can be re-use in relaunching the app
+    [[CommonClass sharedInstance]setValueToUserDefault:lang andKey:KLANGUAGE_STORE_KEY];
 }
 
 

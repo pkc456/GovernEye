@@ -48,7 +48,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-Em-I44">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-Em-I44">
                                 <rect key="frame" x="285" y="135" width="75" height="29"/>
                                 <color key="backgroundColor" red="0.2470588235" green="0.64313725489999995" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -67,15 +67,17 @@
                                     <action selector="btnSignInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfn-1P-W1d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Y-7K-w94">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Y-7K-w94">
                                 <rect key="frame" x="15" y="135" width="113" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Create an Account"/>
+                                <state key="normal" title="Create an Account">
+                                    <color key="titleColor" red="0.29803921570000003" green="0.70588235290000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="btnSignUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FGE-Hn-4ED"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LJ-6b-mTW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LJ-6b-mTW">
                                 <rect key="frame" x="15" y="193" width="101" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Forgot Password?">
@@ -137,6 +139,8 @@
                     <connections>
                         <outlet property="buttonForgotPassword" destination="4LJ-6b-mTW" id="3z8-TQ-h7K"/>
                         <outlet property="buttonRememberMe" destination="Ekk-P8-ztI" id="DUi-7k-Ruh"/>
+                        <outlet property="buttonSignIn" destination="QoT-Em-I44" id="DZW-yr-GKw"/>
+                        <outlet property="buttonSignUp" destination="l2Y-7K-w94" id="1jQ-Rv-ESR"/>
                         <outlet property="textfieldEmail" destination="VFS-eS-u6J" id="oKO-wi-GUt"/>
                         <outlet property="textfieldPassword" destination="R7b-nT-m50" id="0xk-jz-Ofi"/>
                         <outlet property="webview" destination="Mq6-5O-7Iv" id="nVc-OY-7yt"/>
